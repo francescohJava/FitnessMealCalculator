@@ -3,6 +3,112 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuBar?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane fx:id="mainWindow" fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" >
+    <top>
+        <MenuBar>
+            <Menu text="Meals">
+                <items>
+                    <MenuItem text="Add" onAction="#showAddMealsDialog"/>
+                    <MenuItem text="Delete" onAction="#showDeleteMealsDialog"/>
+                    <MenuItem text="Repair" onAction="#showRepairMealsDialog"/>
+                </items>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <GridPane xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+            <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+            <HBox spacing="10" alignment="BOTTOM_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text = "meal"/>
+                <ComboBox fx:id="mealComboBox" promptText="choose"/>
+                <Label text="weight"/>
+                <TextField fx:id="mealWeight" maxWidth="50"/>
+                <Label text="grams"/>
+                <Button fx:id="addMeal" text="add" onAction="#addConsumedMeal"/>
+            </HBox>
+
+            <TableView fx:id="nutritionTable" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       maxWidth="885" maxHeight="410" minWidth="885" minHeight="410">
+                <columns>
+                    <TableColumn fx:id="mealColumn" text="meal" resizable="false">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="weightColumn" text="weight" resizable="false">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="weight" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="caloriesColumn" text="calories" resizable="false">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="calories" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="fat" resizable="false">
+                        <columns>
+                            <TableColumn fx:id="saturatedFatColumn" text="saturated" resizable="false">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="saturatedFat" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="totalFatColumn" text="total" resizable="false">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="totalFat" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableColumn>
+                    <TableColumn fx:id="cholesterolColumn" text="cholesterol" resizable="false">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="cholesterol" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="sodiumColumn" text="sodium" resizable="false">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="sodium" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="carbohydrate" resizable="false">
+                        <columns>
+                            <TableColumn fx:id="dietaryFiberColumn" text="dietary fiber" resizable="false">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="dieatryFiber" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="sugarColumn" text="sugar" resizable="false">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="sugar" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="totalCarbohydrateColumn" text="total" resizable="false">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="totalCarbohydrate" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableColumn>
+                    <TableColumn fx:id="proteinColumn" text="protein" resizable="false">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="protein" />
+                    </cellValueFactory>
+                    </TableColumn>
+                </columns>
+
+
+            </TableView>
+
+        </GridPane>
+    </center>
+</BorderPane>

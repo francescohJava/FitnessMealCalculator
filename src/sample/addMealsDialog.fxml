@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<BorderPane fx:id="mainWindow" fx:controller="sample.AddMealsController" xmlns:fx="http://javafx.com/fxml">
+    <center>
+<GridPane  vgap="10" hgap="10" >
+    <BorderPane.margin>
+        <Insets bottom="25" left="25" top="25" right="25"/>
+    </BorderPane.margin>
+    <Label text="Meal:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="name"  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Label text="Calories:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="calories"  GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="Total fat:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="totalFat"  GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label text="Saturated fat:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="saturatedFat"  GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label text="Cholesterol:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="cholesterol"  GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Label text="Total Carbohydrate:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="totalCarbohydrate"  GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <Label text="Dietary Fiber:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="dietaryFiber"  GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <Label text="Sugar:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <TextField fx:id="sugar"  GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    <Label text="Protein:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <TextField fx:id="protein"  GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+</GridPane>
+    </center>
+
+    <bottom>
+
+        <HBox alignment="BOTTOM_RIGHT" GridPane.rowIndex="10" GridPane.columnIndex="1" spacing="15">
+            <BorderPane.margin>
+                <Insets bottom="25" left="25" top="25" right="25"/>
+            </BorderPane.margin>
+            <Button fx:id="addButton" text="Add" minWidth="55" onAction="#addMeal"/>
+            <Button fx:id="exitButton" text="Exit" minWidth="55" onAction="#saveAndExit"/>
+        </HBox>
+    </bottom>
+</BorderPane>
+
+
+
+
+

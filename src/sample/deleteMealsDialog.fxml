@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane fx:id="mainWindow" fx:controller="sample.DeleteMealsController" xmlns:fx="http://javafx.com/fxml">
+    <BorderPane.margin>
+        <Insets bottom="25" left="25" top="25" right="25"/>
+    </BorderPane.margin>
+    <center>
+        <GridPane xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+            <BorderPane.margin>
+                <Insets bottom="25" left="25" top="25" right="25"/>
+            </BorderPane.margin>
+            <Label text = "meal" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="mealComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="choose" onAction="#selectItem"/>
+            <Label text="name" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="name" GridPane.columnIndex="3" GridPane.rowIndex="0" editable="false"/>
+            <Label text="calories" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="calories" GridPane.columnIndex="3" GridPane.rowIndex="1" editable="false"/>
+            <Label text="total fat" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <TextField fx:id="totalFat" GridPane.columnIndex="3" GridPane.rowIndex="2" editable="false"/>
+            <Label text="saturated fat" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+            <TextField fx:id="saturatedFat" GridPane.columnIndex="3" GridPane.rowIndex="3" editable="false"/>
+            <Label text="cholesterol" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+            <TextField fx:id="cholesterol" GridPane.columnIndex="3" GridPane.rowIndex="4" editable="false"/>
+            <Label text="total carbohydrate" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+            <TextField fx:id="totalCarbohydrate" GridPane.columnIndex="3" GridPane.rowIndex="5" editable="false"/>
+            <Label text="dietary fiber" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+            <TextField fx:id="dietaryFiber" GridPane.columnIndex="3" GridPane.rowIndex="6" editable="false"/>
+            <Label text="sugar" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+            <TextField fx:id="sugar" GridPane.columnIndex="3" GridPane.rowIndex="7" editable="false"/>
+            <Label text="protein" GridPane.columnIndex="2" GridPane.rowIndex="8"/>
+            <TextField fx:id="protein" GridPane.columnIndex="3" GridPane.rowIndex="8" editable="false"/>
+        </GridPane>
+    </center>
+    <bottom>
+
+        <HBox alignment="BOTTOM_RIGHT" GridPane.rowIndex="10" GridPane.columnIndex="1" spacing="15">
+            <BorderPane.margin>
+                <Insets bottom="25" left="25" top="25" right="25"/>
+            </BorderPane.margin>
+            <Button fx:id="deleteButton" text="Delete" minWidth="55" onAction="#deleteMeal"/>
+            <Button fx:id="exitButton" text="Exit" minWidth="55" onAction="#saveAndExit"/>
+        </HBox>
+    </bottom>
+
+
+
+
+</BorderPane>
