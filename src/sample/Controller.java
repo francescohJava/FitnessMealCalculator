@@ -40,7 +40,7 @@ public class Controller implements Initializable {
 
         mealComboBox.getItems().addAll(MealList.toArrayStringName());
 
-
+        //Listener for consumedMealList changes
         MealList.changeListProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -52,6 +52,7 @@ public class Controller implements Initializable {
             }
         });
 
+        //add delete in context menu
         nutritionTable.setRowFactory(new Callback<TableView<ConsumedMeal>, TableRow<ConsumedMeal>>(){
             public TableRow<ConsumedMeal> call(TableView<ConsumedMeal> tableView)
             {
@@ -107,7 +108,7 @@ public class Controller implements Initializable {
     public void addConsumedMeal()
     {
         Double weight;
-        ConsumedMeal consumptmeal = new ConsumedMeal();
+        ConsumedMeal consumedMeal = new ConsumedMeal();
         Meal meal = MealList.find(mealComboBox.getValue());
         if(meal == null)
             return;
@@ -123,8 +124,8 @@ public class Controller implements Initializable {
             mealWeight.setText("");
             return;
         }
-        consumptmeal.fill(meal, weight);
-        ConsumedMealList.add(consumptmeal);
+        consumedMeal.fill(meal, weight);
+        ConsumedMealList.add(consumedMeal);
         mealWeight.clear();
         refreshTable();
     }
@@ -132,8 +133,10 @@ public class Controller implements Initializable {
     private void refreshTable() {
         ObservableList<ConsumedMeal> data = nutritionTable.getItems();
         int i;
+        //clear all data
         data.clear();
         int sizeList = ConsumedMealList.getConsumedMeals().size();
+        //add all data
         for(i = 0; i < sizeList; i++)
         {
             data.add(ConsumedMealList.getConsumedMeals().get(i));

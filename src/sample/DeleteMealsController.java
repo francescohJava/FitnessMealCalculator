@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -81,7 +80,6 @@ public class DeleteMealsController implements Initializable {
         Meal meal = MealList.find(mealComboBox.getValue());
         MealList.delete(meal);
 
-
         name.clear();
         calories.clear();
         totalFat.clear();
@@ -101,11 +99,6 @@ public class DeleteMealsController implements Initializable {
         {
             System.out.println("Deleting failed");
         }
-
-
-
-
-
     }
 
     @FXML

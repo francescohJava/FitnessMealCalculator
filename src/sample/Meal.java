@@ -53,6 +53,19 @@ public class Meal {
         this.protein = protein;
     }
 
+    public void fillMeal(Meal meal) {
+
+        this.name = meal.name;
+        this.calories = meal.calories;
+        this.totalFat = meal.totalFat;
+        this.saturatedFat = meal.saturatedFat;
+        this.cholesterol = meal.cholesterol;
+        this.totalCarbohydrate = meal.totalCarbohydrate;
+        this.dietaryFiber = meal.dietaryFiber;
+        this.sugar = meal.sugar;
+        this.protein = meal.protein;
+    }
+
     public String getName() {
         return name;
     }

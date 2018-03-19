@@ -1,9 +1,7 @@
 package sample;
 
 import javafx.scene.control.Alert;
-
 import java.util.ArrayList;
-
 import static sample.Controller.MAXROWS;
 
 public class ConsumedMealList {
@@ -11,14 +9,13 @@ public class ConsumedMealList {
     static
     {
         consumedMeals = new ArrayList<>();
-        
     }
 
     public static ArrayList<ConsumedMeal> getConsumedMeals() {
         return consumedMeals;
     }
 
-    static public boolean add(ConsumedMeal consumpt)
+    static public boolean add(ConsumedMeal consumedMeal)
     {
 
         if(consumedMeals.size() >= MAXROWS)
@@ -30,7 +27,7 @@ public class ConsumedMealList {
             alert.showAndWait();
             return false;
         }
-        consumedMeals.add(consumpt);
+        consumedMeals.add(consumedMeal);
         return true;
     }
 

@@ -53,15 +53,12 @@ public class RepairMealsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         repairButton.setDisable(true);
         mealComboBox.getItems().addAll(MealList.toArrayStringName());
-
     }
 
     @FXML
     private void selectItem()
     {
-        Meal meal = new Meal();
-        meal = null;
-        meal = MealList.find(mealComboBox.getValue());
+        Meal meal = MealList.find(mealComboBox.getValue());
         order = MealList.indexOf(meal);
         if(order == -1)
             return;
